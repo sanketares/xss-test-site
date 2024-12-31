@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XSS Vulnerability Test</title>
+  <title>Fixed XSS Vulnerability</title>
 </head>
 <body>
-  <h1>Welcome to the XSS Vulnerability Test</h1>
+  <h1>Welcome to the Secure XSS Test</h1>
   <form action="" method="GET">
     <label for="username">Enter your username:</label>
     <input type="text" id="username" name="username">
@@ -20,6 +20,7 @@
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get('username');
+    // Safe way to insert user input:
     document.getElementById('username-display').textContent = username;
   </script>
 </body>
